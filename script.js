@@ -5,29 +5,29 @@ function checkNationalId() {
 
     errorDiv.innerText = '';
 
-    // حالت ۲: کدملی کمتر از ۱۰ رقم باشد
     if (nationalId.length < 10) {
         errorDiv.innerText = "لطفا کدملی را بصورت صحیح وارد کنید";
         return;
     }
 
-    // بررسی وجود در لیست اکسل
     if (guestsData.hasOwnProperty(nationalId)) {
-        // حالت ۱: کد ملی منطبق است
         const guestName = guestsData[nationalId];
         showInvitation(guestName);
     } else {
-        // حالت ۳: کد ملی در لیست نیست
         errorDiv.innerText = "متاسفانه کدملی وارد شده در لیست مدعوین قرار ندارد.";
     }
 }
 
 function showInvitation(name) {
-    document.getElementById('page-home').style.display = 'none';
-    
+    const pageHome = document.getElementById('page-home');
     const pageInv = document.getElementById('page-invitation');
     const nameOverlay = document.getElementById('guest-name');
     
+    pageHome.classList.remove('active');
+    pageHome.style.display = 'none';
+    
     nameOverlay.innerText = name;
+    
+    pageInv.classList.add('active');
     pageInv.style.display = 'flex';
 }
