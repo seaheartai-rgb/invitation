@@ -1,0 +1,154 @@
+@import url('https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Vazirmatn', tahoma, sans-serif;
+}
+
+body, html {
+    width: 100%;
+    height: 100%;
+}
+
+.page {
+    display: none;
+    width: 100%;
+    min-height: 100vh;
+}
+
+/* ---------------- صفحه اول ---------------- */
+#page-home {
+    background-color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.home-container {
+    text-align: center;
+    max-width: 450px;
+    width: 100%;
+}
+
+.home-img {
+    max-width: 280px;
+    width: 100%;
+    height: auto;
+    margin-bottom: 25px;
+}
+
+.instruction-text {
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+#national-id-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+}
+
+#national-id-input {
+    width: 100%;
+    max-width: 280px;
+    padding: 12px 15px;
+    font-size: 1.2rem;
+    text-align: center;
+    letter-spacing: 3px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+#national-id-input:focus {
+    border-color: #1b5e20;
+}
+
+button {
+    background-color: #1b5e20;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #2e7d32;
+}
+
+.error-msg {
+    color: #d32f2f;
+    margin-top: 15px;
+    font-size: 0.95rem;
+    font-weight: bold;
+    min-height: 24px;
+}
+
+/* ---------------- صفحه دوم ---------------- */
+#page-invitation {
+    background-color: #F6E5C9;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 10px;
+}
+
+/* انیمیشن ورود بنر */
+.card-wrapper {
+    position: relative;
+    max-width: 550px;
+    width: 100%;
+    margin: 0 auto;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    border-radius: 12px;
+    overflow: hidden;
+    
+    /* انیمیشن زوم و فید */
+    animation: fadeInZoom 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+@keyframes fadeInZoom {
+    0% {
+        opacity: 0;
+        transform: scale(0.85) translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+.invitation-img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* جای‌گذاری نام روی نقطه چین بنر */
+.guest-name-overlay {
+    position: absolute;
+    top: 46.5%; /* موقعیت دقیق خط نقطه چین */
+    right: 50.5%; /* شروع از جلوی عبارت "جناب آقای / سرکار خانم:" */
+    font-size: 1.05rem;
+    font-weight: bold;
+    color: #111111;
+    white-space: nowrap;
+}
+
+/* پشتیبانی از نمایش مناسب در موبایل */
+@media (max-width: 480px) {
+    .guest-name-overlay {
+        font-size: 0.85rem;
+        top: 46.7%;
+        right: 51%;
+    }
+}
