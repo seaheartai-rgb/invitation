@@ -8,22 +8,25 @@
 </head>
 <body>
 
-    <!-- صفحه اول: ویدئو و فرم کد ملی -->
+    <!-- صفحه اول -->
     <div id="page-home" class="page active">
         <div class="home-container">
-            <!-- لوگوی بیمه کارآفرین در بالای صفحه -->
+            <!-- لوگوی بیمه کارآفرین -->
             <img src="logo.png" alt="لوگو بیمه کارآفرین" class="top-logo">
             
-            <!-- جایگزینی عکس با ویدئو با قابلیت کلیک برای پخش -->
-            <div class="video-wrapper" onclick="playVideo()">
-                <video id="intro-video" src="home-anim.mp4" playsinline></video>
-                <div id="play-overlay" class="play-btn-overlay">
-                    <div class="play-icon">▶</div>
-                    <span>برای شروع کلیک کنید</span>
-                </div>
+            <!-- باکس سبز پاستیلی با گوشه‌های گرد و متن همایش -->
+            <div class="event-info-box">
+                <h2>همایش سراسری مدیران و شبکه فروش</h2>
+                <p>اختتامیه پانزدهمین دوره جشنواره فروش بیمه‌های زندگی و اموال</p>
+                <span class="event-year">نیمه اول سال ۱۴۰۵</span>
+            </div>
+            
+            <!-- ویدئو با قابلیت پخش خودکار و بی‌صدا بدون نیاز به کلیک -->
+            <div class="video-wrapper">
+                <video id="intro-video" src="home-anim.mp4" autoplay muted playsinline></video>
             </div>
 
-            <!-- بخش ورود کد ملی که در ابتدا مخفی است -->
+            <!-- بخش ورود کد ملی (ابتدا مخفی) -->
             <div id="form-container" class="hidden-section">
                 <p class="instruction-text">میهمان گرامی، لطفا جهت مشاهده دعوت‌نامه خود، کدملی خود را وارد کنید:</p>
                 

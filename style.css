@@ -30,12 +30,12 @@ body, html {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 20px;
+    padding: 15px;
 }
 
 .home-container {
     text-align: center;
-    max-width: 450px;
+    max-width: 480px;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -43,22 +43,52 @@ body, html {
 }
 
 .top-logo {
-    max-width: 160px;
+    max-width: 140px;
     width: 100%;
     height: auto;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
+}
+
+/* استایل باکس سبز پاستیلی با گوشه‌های گرد */
+.event-info-box {
+    background-color: #E8F5E9; /* سبز پاستیلی ملایم */
+    border: 1px solid #C8E6C9;
+    border-radius: 14px;
+    padding: 12px 16px;
+    width: 100%;
+    margin-bottom: 12px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.04);
+}
+
+.event-info-box h2 {
+    font-size: 0.95rem;
+    color: #1b5e20;
+    margin-bottom: 4px;
+    font-weight: bold;
+}
+
+.event-info-box p {
+    font-size: 0.8rem;
+    color: #333333;
+    margin-bottom: 4px;
+    line-height: 1.4;
+}
+
+.event-year {
+    font-size: 0.75rem;
+    color: #2e7d32;
+    font-weight: bold;
 }
 
 /* استایل کانتینر ویدئو */
 .video-wrapper {
     position: relative;
     width: 100%;
-    max-width: 320px;
-    border-radius: 12px;
+    max-width: 280px;
+    border-radius: 10px;
     overflow: hidden;
-    cursor: pointer;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    margin-bottom: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    margin-bottom: 12px;
     background-color: #000;
 }
 
@@ -68,52 +98,12 @@ body, html {
     display: block;
 }
 
-/* دکمه و متن روی ویدئو قبل از کلیک */
-.play-btn-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.35);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    transition: background 0.3s;
-}
-
-.video-wrapper:hover .play-btn-overlay {
-    background: rgba(0, 0, 0, 0.2);
-}
-
-.play-icon {
-    font-size: 2.5rem;
-    background: #1b5e20;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 8px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    padding-right: 4px; /* برای وسط ماندن آیکون پلی */
-}
-
-.play-btn-overlay span {
-    font-size: 0.9rem;
-    font-weight: bold;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
-}
-
 /* حالت مخفی و انیمیشن ظاهر شدن فرم کد ملی */
 .hidden-section {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(15px);
     visibility: hidden;
-    transition: opacity 0.8s ease, transform 0.8s ease;
+    transition: opacity 0.6s ease, transform 0.6s ease;
     width: 100%;
 }
 
@@ -124,24 +114,24 @@ body, html {
 }
 
 .instruction-text {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     color: #333;
-    margin-bottom: 12px;
-    line-height: 1.6;
+    margin-bottom: 10px;
+    line-height: 1.5;
 }
 
 #national-id-form {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 8px;
     align-items: center;
     width: 100%;
 }
 
 #national-id-input {
     width: 100%;
-    max-width: 260px;
-    padding: 10px 15px;
+    max-width: 250px;
+    padding: 9px 12px;
     font-size: 1.1rem;
     text-align: center;
     letter-spacing: 3px;
@@ -159,8 +149,8 @@ button {
     background-color: #1b5e20;
     color: white;
     border: none;
-    padding: 10px 25px;
-    font-size: 0.95rem;
+    padding: 9px 22px;
+    font-size: 0.9rem;
     border-radius: 8px;
     cursor: pointer;
     transition: background-color 0.3s;
@@ -172,10 +162,10 @@ button:hover {
 
 .error-msg {
     color: #d32f2f;
-    margin-top: 8px;
+    margin-top: 6px;
     font-size: 0.85rem;
     font-weight: bold;
-    min-height: 20px;
+    min-height: 18px;
 }
 
 /* ---------------- صفحه دوم (دعوت‌نامه) ---------------- */
@@ -216,8 +206,8 @@ button:hover {
 
 .guest-name-overlay {
     position: absolute;
-    top: 44.8%; 
-    right: 51%; 
+    top: 45.8%; 
+    right: 48%; 
     transform: translateY(-50%);
     font-size: clamp(0.75rem, 2.1vw, 1.05rem);
     font-weight: bold;

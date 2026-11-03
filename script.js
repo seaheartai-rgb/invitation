@@ -1,32 +1,34 @@
-let isVideoPlayed = false;
-
-function playVideo() {
-    if (isVideoPlayed) return; // جلوگیری از کلیک مجدد حین پخش
-    
+document.addEventListener("DOMContentLoaded", function() {
     const video = document.getElementById('intro-video');
-    const overlay = document.getElementById('play-overlay');
     
-    // مخفی کردن دکمه پلی روی ویدئو
-    overlay.style.opacity = '0';
-    setTimeout(() => {
-        overlay.style.display = 'none';
-    }, 300);
-    
-    video.play();
-    isVideoPlayed = true;
+    // تلاش برای پخش خودکار به صورت بی‌صدا
+    video.muted = true;
+    let playPromise = video.play();
 
-    // رخداد پایان ویدئو
+    if (playPromise !== undefined) {
+        playPromise.catch(error => {
+            // اگر مرورگر به دلیل سیاست‌های امنیتی autoplay را مسدود کرد، با اولین کلیک کاربر ویدئو پخش شود
+            document.addEventListener('click', function handler() {
+                video.muted = true;
+                video.play();
+                document.removeEventListener('click', handler);
+            }, { once: true });
+        });
+    }
+
+    // رخداد اتمام پخش ویدئو
     video.onended = function() {
-        // ۳ ثانیه مکث بعد از اتمام ویدئو
+        // تاخیر 0.5 ثانیه (500 میلی‌ثانیه) پس از پایان ویدئو
         setTimeout(() => {
             const formContainer = document.getElementById('form-container');
             formContainer.classList.add('show');
             
-            // فوکوس روی فیلد کد ملی پس از نمایش
-            document.getElementById('national-id-input').focus();
-        }, 3000); // 3000 میلی‌ثانیه = 3 ثانیه مکث
+            // فوکوس روی فیلد کد ملی
+            const inputField = document.getElementById('national-id-input');
+            if(inputField) inputField.focus();
+        }, 500);
     };
-}
+});
 
 function checkNationalId() {
     const input = document.getElementById('national-id-input');
