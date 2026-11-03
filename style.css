@@ -153,8 +153,8 @@ button:hover {
 /* تنظیم دقیق نام روی خط نقطه‌چین + انیمیشن درخشش متن */
 .guest-name-overlay {
     position: absolute;
-    top: 40.1%; 
-    right: 50.8%; 
+    top: 43.1%; 
+    right: 49.8%; 
     transform: translate(0, -50%);
     font-size: clamp(0.75rem, 2.1vw, 1.05rem);
     font-weight: bold;
