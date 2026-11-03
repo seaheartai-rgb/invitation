@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دعوت‌نامه همایش سراسری بیمه کارآفرین</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- صفحه اول: ورود کد ملی -->
+    <div id="page-home" class="page active">
+        <div class="home-container">
+            <!-- اضافه شدن لوگوی شرکت بیمه کارآفرین در بالا و وسط -->
+            <img src="logo.png" alt="لوگو بیمه کارآفرین" class="top-logo">
+            
+            <img src="home.png" alt="تصویر دعوت‌نامه" class="home-img">
+            <p class="instruction-text">میهمان گرامی، لطفا جهت مشاهده دعوت‌نامه خود، کدملی خود را وارد کنید:</p>
+            
+            <form id="national-id-form" onsubmit="event.preventDefault(); checkNationalId();">
+                <input 
+                    type="text" 
+                    id="national-id-input" 
+                    maxlength="10" 
+                    placeholder="کد ملی ۱۰ رقمی"
+                    inputmode="numeric"
+                    oninput="this.value = this.value.replace(/[^0-9]/g, '');"
+                >
+                <button type="submit">مشاهده دعوت‌نامه</button>
+            </form>
+            
+            <div id="error-message" class="error-msg"></div>
+        </div>
+    </div>
+
+    <!-- صفحه دوم: نمایش کارت دعوت -->
+    <div id="page-invitation" class="page">
+        <div class="card-wrapper">
+            <img src="invation.jpg" alt="کارت دعوت" class="invitation-img">
+            <div id="guest-name" class="guest-name-overlay"></div>
+        </div>
+    </div>
+
+    <script src="guests.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
