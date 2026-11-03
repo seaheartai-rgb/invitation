@@ -206,7 +206,7 @@ button:hover {
 
 .guest-name-overlay {
     position: absolute;
-    top: 42.8%; 
+    top: 43.5%; 
     right: 48%; 
     transform: translateY(-50%);
     font-size: clamp(0.75rem, 2.1vw, 1.05rem);
@@ -236,7 +236,7 @@ button:hover {
 
 @media (max-width: 480px) {
     .guest-name-overlay {
-        top: 43.0%;
+        top: 43.5%;
         right: 48.2%;
     }
 }
