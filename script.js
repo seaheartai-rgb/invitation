@@ -1,3 +1,33 @@
+let isVideoPlayed = false;
+
+function playVideo() {
+    if (isVideoPlayed) return; // جلوگیری از کلیک مجدد حین پخش
+    
+    const video = document.getElementById('intro-video');
+    const overlay = document.getElementById('play-overlay');
+    
+    // مخفی کردن دکمه پلی روی ویدئو
+    overlay.style.opacity = '0';
+    setTimeout(() => {
+        overlay.style.display = 'none';
+    }, 300);
+    
+    video.play();
+    isVideoPlayed = true;
+
+    // رخداد پایان ویدئو
+    video.onended = function() {
+        // ۳ ثانیه مکث بعد از اتمام ویدئو
+        setTimeout(() => {
+            const formContainer = document.getElementById('form-container');
+            formContainer.classList.add('show');
+            
+            // فوکوس روی فیلد کد ملی پس از نمایش
+            document.getElementById('national-id-input').focus();
+        }, 3000); // 3000 میلی‌ثانیه = 3 ثانیه مکث
+    };
+}
+
 function checkNationalId() {
     const input = document.getElementById('national-id-input');
     const errorDiv = document.getElementById('error-message');

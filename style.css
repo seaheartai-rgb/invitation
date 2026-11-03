@@ -42,32 +42,98 @@ body, html {
     align-items: center;
 }
 
-/* استایل لوگوی شرکت در بالای صفحه اول */
 .top-logo {
-    max-width: 180px;
+    max-width: 160px;
     width: 100%;
     height: auto;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
-.home-img {
-    max-width: 220px;
+/* استایل کانتینر ویدئو */
+.video-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 320px;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    margin-bottom: 15px;
+    background-color: #000;
+}
+
+#intro-video {
     width: 100%;
     height: auto;
-    margin-bottom: 20px;
+    display: block;
+}
+
+/* دکمه و متن روی ویدئو قبل از کلیک */
+.play-btn-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.35);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    transition: background 0.3s;
+}
+
+.video-wrapper:hover .play-btn-overlay {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.play-icon {
+    font-size: 2.5rem;
+    background: #1b5e20;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    padding-right: 4px; /* برای وسط ماندن آیکون پلی */
+}
+
+.play-btn-overlay span {
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+/* حالت مخفی و انیمیشن ظاهر شدن فرم کد ملی */
+.hidden-section {
+    opacity: 0;
+    transform: translateY(20px);
+    visibility: hidden;
+    transition: opacity 0.8s ease, transform 0.8s ease;
+    width: 100%;
+}
+
+.hidden-section.show {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
 }
 
 .instruction-text {
-    font-size: 1rem;
+    font-size: 0.95rem;
     color: #333;
-    margin-bottom: 15px;
+    margin-bottom: 12px;
     line-height: 1.6;
 }
 
 #national-id-form {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 10px;
     align-items: center;
     width: 100%;
 }
@@ -106,17 +172,17 @@ button:hover {
 
 .error-msg {
     color: #d32f2f;
-    margin-top: 10px;
-    font-size: 0.9rem;
+    margin-top: 8px;
+    font-size: 0.85rem;
     font-weight: bold;
-    min-height: 22px;
+    min-height: 20px;
 }
 
 /* ---------------- صفحه دوم (دعوت‌نامه) ---------------- */
 #page-invitation {
     background-color: #F6E5C9;
     justify-content: center;
-    align-items: flex-start; /* چسباندن کارت به بالای صفحه */
+    align-items: flex-start;
     padding: 10px;
 }
 
@@ -128,8 +194,6 @@ button:hover {
     box-shadow: 0 8px 25px rgba(0,0,0,0.15);
     border-radius: 8px;
     overflow: hidden;
-    
-    /* انیمیشن روان ورود بنر */
     animation: smoothSlideIn 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
@@ -150,18 +214,15 @@ button:hover {
     display: block;
 }
 
-/* تنظیم دقیق نام روی خط نقطه‌چین + انیمیشن درخشش متن */
 .guest-name-overlay {
     position: absolute;
-    top: 47.9%; 
-    right: 47.5%; 
-    transform: translate(0, -50%);
+    top: 46.8%; 
+    right: 51%; 
+    transform: translateY(-50%);
     font-size: clamp(0.75rem, 2.1vw, 1.05rem);
     font-weight: bold;
     color: #111111;
     white-space: nowrap;
-    
-    /* انیمیشن درخشش و ظاهر شدن نام */
     animation: nameGlowAppear 1.5s ease-in-out forwards;
 }
 
@@ -183,10 +244,9 @@ button:hover {
     }
 }
 
-/* ریسپانسیو برای موبایل */
 @media (max-width: 480px) {
     .guest-name-overlay {
-        top: 48.2%;
+        top: 46.8%;
         right: 51.2%;
     }
 }

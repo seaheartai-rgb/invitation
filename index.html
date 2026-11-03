@@ -8,28 +8,39 @@
 </head>
 <body>
 
-    <!-- صفحه اول: ورود کد ملی -->
+    <!-- صفحه اول: ویدئو و فرم کد ملی -->
     <div id="page-home" class="page active">
         <div class="home-container">
-            <!-- اضافه شدن لوگوی شرکت بیمه کارآفرین در بالا و وسط -->
+            <!-- لوگوی بیمه کارآفرین در بالای صفحه -->
             <img src="logo.png" alt="لوگو بیمه کارآفرین" class="top-logo">
             
-            <img src="home.png" alt="تصویر دعوت‌نامه" class="home-img">
-            <p class="instruction-text">میهمان گرامی، لطفا جهت مشاهده دعوت‌نامه خود، کدملی خود را وارد کنید:</p>
-            
-            <form id="national-id-form" onsubmit="event.preventDefault(); checkNationalId();">
-                <input 
-                    type="text" 
-                    id="national-id-input" 
-                    maxlength="10" 
-                    placeholder="کد ملی ۱۰ رقمی"
-                    inputmode="numeric"
-                    oninput="this.value = this.value.replace(/[^0-9]/g, '');"
-                >
-                <button type="submit">مشاهده دعوت‌نامه</button>
-            </form>
-            
-            <div id="error-message" class="error-msg"></div>
+            <!-- جایگزینی عکس با ویدئو با قابلیت کلیک برای پخش -->
+            <div class="video-wrapper" onclick="playVideo()">
+                <video id="intro-video" src="home-anim.mp4" playsinline></video>
+                <div id="play-overlay" class="play-btn-overlay">
+                    <div class="play-icon">▶</div>
+                    <span>برای شروع کلیک کنید</span>
+                </div>
+            </div>
+
+            <!-- بخش ورود کد ملی که در ابتدا مخفی است -->
+            <div id="form-container" class="hidden-section">
+                <p class="instruction-text">میهمان گرامی، لطفا جهت مشاهده دعوت‌نامه خود، کدملی خود را وارد کنید:</p>
+                
+                <form id="national-id-form" onsubmit="event.preventDefault(); checkNationalId();">
+                    <input 
+                        type="text" 
+                        id="national-id-input" 
+                        maxlength="10" 
+                        placeholder="کد ملی ۱۰ رقمی"
+                        inputmode="numeric"
+                        oninput="this.value = this.value.replace(/[^0-9]/g, '');"
+                    >
+                    <button type="submit">مشاهده دعوت‌نامه</button>
+                </form>
+                
+                <div id="error-message" class="error-msg"></div>
+            </div>
         </div>
     </div>
 
